@@ -1,0 +1,24 @@
+Layout = {}
+Layout.__index = Layout
+function Layout:Create()
+	local this =
+	{
+		mPanels = {},
+		mPanelDef =
+		{
+			texture = Texture.Find("gradient_panel.png"),
+			size = 3,
+		}
+	
+	}
+	-- First panel is the full screen
+	this.mPanels['screen'] =
+	{
+	x = 0,
+	y = 0,
+	width = System.ScreenWidth(),
+	height = System.ScreenHeight(),
+	}
+	setmetatable(this, self)
+	return this
+end
